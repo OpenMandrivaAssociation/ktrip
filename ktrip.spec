@@ -2,7 +2,7 @@
 #define commit cc1ac2452e41873741c8b5f3fcafa29ae3ce5a30
 
 Name:		ktrip
-Version:	21.07
+Version:	21.12
 Release:	%{?snapshot:1.%{snapshot}.}1
 Summary:	Public transport assistant for Plasma Mobile
 %if 0%{?snapshot}
@@ -27,7 +27,6 @@ BuildRequires:	cmake(KF5I18n)
 BuildRequires:	cmake(KF5ItemModels)
 BuildRequires:	cmake(KF5Config)
 BuildRequires:	cmake(KF5Contacts)
-BuildRequires:	cmake(Qt5AndroidExtras)
 BuildRequires:	cmake(Qt5Svg)
 BuildRequires:	cmake(KF5Kirigami2)
 BuildRequires:	cmake(OpenSSL)
