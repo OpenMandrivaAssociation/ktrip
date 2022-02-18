@@ -2,7 +2,7 @@
 #define commit cc1ac2452e41873741c8b5f3fcafa29ae3ce5a30
 
 Name:		ktrip
-Version:	21.12
+Version:	22.02
 Release:	%{?snapshot:1.%{snapshot}.}1
 Summary:	Public transport assistant for Plasma Mobile
 %if 0%{?snapshot}
