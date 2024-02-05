@@ -34,6 +34,7 @@ BuildRequires:	cmake(OpenSSL)
 BuildRequires:	cmake(Qt6Widgets)
 BuildRequires:	cmake(KF6QQC2DesktopStyle)
 BuildRequires:	cmake(KPublicTransport)
+BuildRequires:	cmake(KF6KirigamiAddons)
 
 %description
 Public transport assistant for Plasma Mobile
