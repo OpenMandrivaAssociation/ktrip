@@ -1,13 +1,15 @@
 %define stable %([ "`echo %{version} |cut -d. -f3`" -ge 80 ] && echo -n un; echo -n stable)
-#define git 20200916
+%define git 20240218
+%define gitbranch release/24.02
+%define gitbranchd %(echo %{gitbranch} |sed -e "s,/,-,g")
 #define commit cc1ac2462e41873741c8b6f3fcafa29ae3ce6a30
 
 Name:		plasma6-ktrip
-Version:	24.01.95
+Version:	24.01.96
 Release:	%{?git:0.%{git}.}1
 Summary:	Public transport assistant for Plasma Mobile
 %if 0%{?git}
-Source0:	https://invent.kde.org/plasma-mobile/ktrip/-/archive/v%{version}/ktrip-v%{version}.tar.bz2
+Source0:	https://invent.kde.org/utilities/ktrip/-/archive/%{gitbranch}/ktrip-%{gitbranchd}.tar.bz2#/ktrip-%{git}.tar.bz2
 %else
 Source0:	https://download.kde.org/%{stable}/release-service/%{version}/src/ktrip-%{version}.tar.xz
 %endif
@@ -40,7 +42,7 @@ BuildRequires:	cmake(KF6KirigamiAddons)
 Public transport assistant for Plasma Mobile
 
 %prep
-%autosetup -p1 -n ktrip-%{version}
+%autosetup -p1 -n ktrip-%{?git:%{gitbranchd}}%{!?git:%{version}}
 %cmake \
 	-G Ninja
 
