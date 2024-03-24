@@ -5,8 +5,8 @@
 #define commit cc1ac2462e41873741c8b6f3fcafa29ae3ce6a30
 
 Name:		plasma6-ktrip
-Version:	24.02.0
-Release:	%{?git:0.%{git}.}2
+Version:	24.02.1
+Release:	%{?git:0.%{git}.}1
 Summary:	Public transport assistant for Plasma Mobile
 %if 0%{?git}
 Source0:	https://invent.kde.org/utilities/ktrip/-/archive/%{gitbranch}/ktrip-%{gitbranchd}.tar.bz2#/ktrip-%{git}.tar.bz2
