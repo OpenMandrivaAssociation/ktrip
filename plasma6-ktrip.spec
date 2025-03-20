@@ -6,7 +6,7 @@
 
 Name:		plasma6-ktrip
 Version:	24.12.3
-Release:	%{?git:0.%{git}.}1
+Release:	%{?git:0.%{git}.}2
 Summary:	Public transport assistant for Plasma Mobile
 %if 0%{?git}
 Source0:	https://invent.kde.org/utilities/ktrip/-/archive/%{gitbranch}/ktrip-%{gitbranchd}.tar.bz2#/ktrip-%{git}.tar.bz2
