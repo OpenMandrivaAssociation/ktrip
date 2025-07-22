@@ -5,7 +5,7 @@
 #define commit cc1ac2462e41873741c8b6f3fcafa29ae3ce6a30
 
 Name:		ktrip
-Version:	25.04.0
+Version:	25.04.3
 Release:	%{?git:0.%{git}.}1
 Summary:	Public transport assistant for Plasma Mobile
 %if 0%{?git}
@@ -15,8 +15,6 @@ Source0:	https://download.kde.org/%{stable}/release-service/%{version}/src/ktrip
 %endif
 License:	GPLv3
 Group:		Applications/Productivity
-BuildRequires:	cmake
-BuildRequires:	ninja
 BuildRequires:	bison
 BuildRequires:	flex
 BuildRequires:	cmake(ECM)
@@ -39,22 +37,15 @@ BuildRequires:	cmake(KF6QQC2DesktopStyle)
 BuildRequires:	cmake(KPublicTransport)
 BuildRequires:	cmake(KF6KirigamiAddons)
 
+%rename plasma6-ktrip
+
+BuildSystem:	cmake
+BuildOption:	-DKDE_INSTALL_USE_QT_SYS_PATHS:BOOL=ON
+
 %description
 Public transport assistant for Plasma Mobile
 
-%prep
-%autosetup -p1 -n ktrip-%{?git:%{gitbranchd}}%{!?git:%{version}}
-%cmake \
-	-G Ninja
-
-%build
-%ninja_build -C build
-
-%install
-%ninja_install -C build
-%find_lang ktrip --all-name
-
-%files -f ktrip.lang
+%files -f %{name}.lang
 %{_bindir}/ktrip
 %{_datadir}/applications/org.kde.ktrip.desktop
 %{_datadir}/metainfo/org.kde.ktrip.appdata.xml
